@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Tengjun&#39;s BCI Site">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/PCA1.png">
+
+
+    <meta name="description" content="1. Purpose and Interpretations of Principal Components Analysis (PCA)The goal of PCA is to constr...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Principal Components Analyses/主成分分析 | Tengjun&#39;s BCI Site</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Tengjun&#39;s BCI Site" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', '&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt; &lt;script async src=&#34;https://www.googletagmanager.com/gtag/js?id=UA-135921603-1&#34;&gt;&lt;/script&gt; &lt;script&gt; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(&#39;js&#39;, new Date());
+gtag(&#39;config&#39;, &#39;UA-135921603-1&#39;); &lt;/script&gt;', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(/./img/banner-img.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Tengjun Liu">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 脑机接口，从未如此有趣！ </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Tengjun&#39;s BCI Site</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Articles/文章</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>Archives/时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Principal Components Analyses/主成分分析">
+            
+	            Principal Components Analyses/主成分分析
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/https-raw-githubusercontent-com-1997Jonas-1997Jonas-github-io-master-images-PCA1-png/">https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/PCA1.png</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/05/17</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="1-Purpose-and-Interpretations-of-Principal-Components-Analysis-PCA"><a href="#1-Purpose-and-Interpretations-of-Principal-Components-Analysis-PCA" class="headerlink" title="1. Purpose and Interpretations of Principal Components Analysis (PCA)"></a><strong>1. Purpose and Interpretations of Principal Components Analysis (PCA)</strong></h1><p>The goal of PCA is to construct sets of weights (called principal components) based on the covariance of a set of correlated variables (electrodes) so that components explain all of the variance of the data such that the components (1) are uncorrelated with each other and (2) are created so that the first principal component explains as much variance as possible for one variable, the second principal component explains as much of the residual variance as possible for one variable while being orthogonal to the first component, and so on, for as many components as there are electrodes (variables).<br>PCA can be used to create a set of spatial filters in which the weights for each electrode are defined by patterns of interelectrode temporal covariance. PCA therefore highlights specific features of the data that might be difficult to identify in the spatially unfiltered data, because they are created by weighted combinations of all electrodes. PCA can also be interpreted as a data reduction technique by assuming that the components that account for a relatively large proportion of variance reflect true signal, whereas components that account for relatively little variance reflect noise.<br>Another way to explain PCA is that it rotates axes in an N-dimensional space (where N is the number of variables or electrodes) such that the variance along each dimension is maximized, and the axes are orthogonal to each other. An example of principal components for two-dimensional (2-D) data is represented visually in the following figure.<br><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/PCA1.png" alt></p>
+<h1 id="2-Difference-between-PCA-and-other-methods"><a href="#2-Difference-between-PCA-and-other-methods" class="headerlink" title="2. Difference between PCA and other methods"></a><strong>2. Difference between PCA and other methods</strong></h1><h2 id="Difference-between-the-Surface-Laplacian-and-PCA"><a href="#Difference-between-the-Surface-Laplacian-and-PCA" class="headerlink" title="Difference between the Surface Laplacian and PCA"></a>Difference between the Surface Laplacian and PCA</h2><p>Whereas the surface Laplacian explicitly attenuates low-spatial frequency activity and therefore highlights local features of the data, PCA highlights global spatial features of the data by identifying patterns of large-scale covariance. Local topographical features contribute relatively little to the covariance matrix and are thus less likely to contribute to the first few principal components that are typically analyzed.</p>
+<h2 id="Difference-between-Independent-Component-Analysis-ICA-and-PCA"><a href="#Difference-between-Independent-Component-Analysis-ICA-and-PCA" class="headerlink" title="Difference between Independent Component Analysis (ICA) and PCA"></a>Difference between Independent Component Analysis (ICA) and PCA</h2><p>PCA is used to decorrelate and reduce the dimensionality of a multivariate signal; ICA is used to demix independent sources that are embedded in multivariate signals. Thus, PCA decorrelates and ICA demixes.<br>There are other important differences between PCA and ICA. PCA is computed using only second-order statistics (variances), whereas ICA also uses higher-order statistics such as skew and kurtosis. ICA uses iterative methods based on minimizing cost functions (typically via mutual information) to adjust weights, whereas PCA does not iterate to adjust weights except during some rotation methods. PCA components are constrained to be orthogonal to each other (except in some methods of rotation), whereas ICA does not assume that sources are orthogonal to each other.<br>ICA is a standard and widely used technique in EEG data analyses. It is used to clean data prior to analyses (as discussed in section 8.1), and it is also used directly in analyses by analyzing component time courses instead of electrode time courses.</p>
+<h1 id="3-How-PCA-Is-Computed"><a href="#3-How-PCA-Is-Computed" class="headerlink" title="3. How PCA Is Computed "></a><strong>3. How PCA Is Computed </strong></h1><p>The first step of computing a PCA is to construct a covariance matrix.</p>
+<p><div align="center"><br><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/PCA2.png" alt></div></p>
+<p><div align="left"><br>in which X is an electrodes-by-time-points matrix, and <img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/PCA3.png" alt> is the mean signal of each electrode over time. Dividing by n can introduce a bias in the covariance at small n (e.g., less than 50). For larger n, the bias is likely to be negligible. EEG data covariance matrices are often computed from hundreds or thousands of observations, so whether n or (n – 1) is used is unlikely to have a significant negative impact on the PCA results.<br>Once a covariance matrix is computed, the next step is to perform an eigendecomposition via the Matlab function<strong> eig</strong>, which returns eigenvalues and eigenvectors in ascending order. Thinking back to the above figure, the eigenvectors are the new rotated axes, and the eigenvalues are the lengths of those axes. In the parlance of PCA the eigenvectors are the principal components. Each column in the eigenvector matrix is a principal component, and each row stores the weights of each electrode. The eigenvalues can be scaled to percentage variance accounted for by dividing each eigenvalue by the sum of all eigenvalues and multiplying by 100. Converting eigenvalues to percentage variance accounted for provides an easily interpretable metric and has the added benefit that it puts all eigenvalues in the same scale and thus comparable across conditions, time windows, subjects, and so on regardless of the scale of the original data.<br>The electrode weights for each component can be plotted as topographical maps, and time courses of the components can be obtained by multiplying the weights by the electrode time series data. Note that this means that each component has one associated time course (in other words, one electrode), and that time course is a weighted sum of the activity of all electrodes.</div></p>
+<h1 id="4-Distinguishing-Significant-from-Nonsignificant-Components"><a href="#4-Distinguishing-Significant-from-Nonsignificant-Components" class="headerlink" title=" 4. Distinguishing Significant from Nonsignificant Components"></a><strong> 4. Distinguishing Significant from Nonsignificant Components</strong></h1><p>When considering a plot of the percentage variance accounted for over components, you will notice that only the first several components account for “ a lot ” of variance, and most of the later components account for relatively little variance. Often in the PCA the first several components will be considered signal, whereas the later components will be considered noise. Keep in mind that PCs are defined based on strengths of interelectrode covariance. Thus, weak interelectrode covariance would result in components with small eigenvalues even if they contain meaningful signal. In other words, spatially local features of the data can be meaningful and can be obscured by spatially broad features. So, labeling components as “ signal ” or “ noise ” based only on their eigenvalues should be done cautiously.<br>Distinguishing significant from nonsignificant components involves determining a percentage variance threshold and considering components that explain variance above that threshold to be significant.<br>There are several ways to determine the threshold. One way is to compute the percentage explained variance that would be expected from each component if all electrodes were uncorrelated with each other. In this case, each component would explain [100 × 1/ M] percent of the variance, where M is the number of electrodes/components. Another way to determine a threshold is to use permutation testing, whereby the data are randomly shuffled, a PCA is computed on the shuffled data, and the amount of variance explained in shuffled data, averaged over many repetitions, is taken as the threshold. The advantage of permutation-based thresholding over the analytic method described in the previous paragraph is that the data distributions and characteristics are retained. The two methods are showed as follows.<br><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/PCA4.png" alt><br>Other methods for determining whether a component is significant include examining changes in the slope of the eigenvalue function or visually inspecting the plot of variance accounted for by each PC.</p>
+<h1 id="5-Rotating-PCA-Solutions"><a href="#5-Rotating-PCA-Solutions" class="headerlink" title=" 5. Rotating PCA Solutions "></a><strong> 5. Rotating PCA Solutions </strong></h1><p>Rotation involves selecting a number of significant components and applying iterative algorithms to further minimize variance along the selected dimensions. There are several methods for rotating principal components that make different assumptions about whether and how components can be correlated. Note that a rotated PCA solution will change if you rotate a different number of components, whereas the unrotated solution will always be the same.<br>To rotate PCA solutions, you can try the PCA toolbox for Matlab (Dien 2010), which is designed specifically for handling EEG data.</p>
+<h1 id="6-Time-Resolved-PCA"><a href="#6-Time-Resolved-PCA" class="headerlink" title=" 6. Time-Resolved PCA "></a><strong> 6. Time-Resolved PCA </strong></h1><p>It may seem inappropriate to include all time points into the covariance matrix, particularly the buffer zones (for edge artifacts) or intertrial intervals. Furthermore, different time periods within the trial might be associated with different neuro electrical modes or covariance configurations. Thus, PCA can be performed over successive time windows.<br><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/PCA5.png" alt><br>If you perform a time-resolved PCA, you will need to decide how much time to include when computing the covariance matrix. There is a trade-off between temporal specificity (shorter periods of time help isolate temporal dynamics, particularly temporally brief dynamics) and signal-to-noise ratio (longer periods of time produce more stable estimates of covariance). In most cases, a time window of around 400 ms should be enough.</p>
+<h1 id="7-PCA-with-Time-Frequency-Information"><a href="#7-PCA-with-Time-Frequency-Information" class="headerlink" title=" 7. PCA with Time-Frequency Information"></a><strong> 7. PCA with Time-Frequency Information</strong></h1><p>PCA can be combined with temporal bandpass filtering to highlight frequency-band-specific spatial features. This can be done by first bandpass filtering the time-domain signal (either via FIR filtering or via the real part of the result of wavelet convolution) and then following the same procedures as already outlined above.</p>
+<h1 id="8-PCA-across-Conditions"><a href="#8-PCA-across-Conditions" class="headerlink" title=" 8. PCA across Conditions "></a><strong> 8. PCA across Conditions </strong></h1><p>PCA can be used for testing condition differences in part because PCA can be used as a data reduction technique. Rather than comparing the electrode-level activity across conditions, you can compare the PC-defined activity across conditions.</p>
+<p><strong>Link:</strong><br><a href="https://1997jonas.github.io/static/PCA_Ltj_2018_5_27.pptx" target="_blank" rel="noopener">Brief Introduction to PCA in Chinese, Tengjun Liu</a>.</p>
+<blockquote>
+<p><strong>Reference:</strong><br>Cohen, Mike X. Analyzing neural time series data: theory and practice. MIT press, 2014.</p>
+</blockquote>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                Declaration:：Financial reposting needs my permission, and others need to have the origin clear.
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/04/27/How-to-plot-figures/" class="next-post btn btn-default" title="How to plot figures in Matlab/Matlab中怎么作图">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">How to plot figures in Matlab/Matlab中怎么作图</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'zozhDTyjCnB5IMe7M8MrcuYM-gzGzoHsz',
+            appKey: 'NzM0lWThplL955Cxc5i9vokC',
+            placeholder: 'Say something...',
+            notify: true,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Purpose-and-Interpretations-of-Principal-Components-Analysis-PCA"><span class="toc-text">1. Purpose and Interpretations of Principal Components Analysis (PCA)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Difference-between-PCA-and-other-methods"><span class="toc-text">2. Difference between PCA and other methods</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Difference-between-the-Surface-Laplacian-and-PCA"><span class="toc-text">Difference between the Surface Laplacian and PCA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Difference-between-Independent-Component-Analysis-ICA-and-PCA"><span class="toc-text">Difference between Independent Component Analysis (ICA) and PCA</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-How-PCA-Is-Computed"><span class="toc-text">3. How PCA Is Computed </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Distinguishing-Significant-from-Nonsignificant-Components"><span class="toc-text"> 4. Distinguishing Significant from Nonsignificant Components</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-Rotating-PCA-Solutions"><span class="toc-text"> 5. Rotating PCA Solutions </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Time-Resolved-PCA"><span class="toc-text"> 6. Time-Resolved PCA </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-PCA-with-Time-Frequency-Information"><span class="toc-text"> 7. PCA with Time-Frequency Information</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-PCA-across-Conditions"><span class="toc-text"> 8. PCA across Conditions </span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
