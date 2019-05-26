@@ -16,10 +16,11 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="BCI Brain-Computer Interface">
+    <meta name="keywords" content="Basic Skills/基本技能">
 
 
-    <meta name="description" content="Tengjun&#39;s BCI(Brain-Computer Interface) Site, record my learning experience in BCI.">
+    <meta name="description" content="
+Find all the .m files in the current folder and its subfolder(s).123456789101112subdir=genpath('...">
 
 
 
@@ -31,7 +32,7 @@
     <!--Title-->
 
 
-<title>Tag: Feature Extraction/特征提取 | Tengjun&#39;s BCI Site</title>
+<title>Some useful techniques of Matlab (Updating)/一些Matlab有用的技巧（更新中） | Tengjun&#39;s BCI Site</title>
 
 
     <link rel="alternate" href="/atom.xml" title="Tengjun&#39;s BCI Site" type="application/atom+xml">
@@ -137,49 +138,104 @@ gtag(&#39;config&#39;, &#39;UA-135921603-1&#39;); &lt;/script&gt;', 'auto');
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Some useful techniques of Matlab (Updating)/一些Matlab有用的技巧（更新中）">
+            
+	            Some useful techniques of Matlab (Updating)/一些Matlab有用的技巧（更新中）
+            
+        </h1>
+        <div class="post-meta">
     
-    
-        <li>
-            Feature Extraction/特征提取
-        </li>
-    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
     
 
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Basic-Skills-基本技能/">Basic Skills/基本技能</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/05/26</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <ol>
+<li>Find all the .m files in the current folder and its subfolder(s).<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">subdir=genpath(<span class="string">'.'</span>); <span class="comment">%Find all the subfolders in the current folder</span></span><br><span class="line">filedir=regexp(subdir,<span class="string">';'</span>, <span class="string">'split'</span>); <span class="comment">%Split the char list into several cells, which contain the paths of every subfolder</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(filedir)<span class="number">-1</span></span><br><span class="line">    data_fn=dir([filedir&#123;<span class="built_in">i</span>&#125;,<span class="string">'\*.m'</span>]); <span class="comment">%Find the .m files in every subfolder</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="built_in">length</span>(data_fn)</span><br><span class="line">        path = [filedir&#123;<span class="built_in">i</span>&#125;,<span class="string">'\',data_fn(j).name]; % Find the path of every .m file</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        % Your processing code for every .m file should be here.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    end</span></span><br><span class="line"><span class="string">end</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
-
-    <article class="post">
-        
-            <div class="post-media">
-                <a href="/2019/03/24/Common-Spatial-Pattern/">
-                    <img class="img-ajax" src="/img/loading.gif" data-src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/csp1.PNG" alt="Common Spatial Pattern(CSP) and Its Improvements/共空间模式及其改进方法">
-                </a>
-            </div>
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/03/24/Common-Spatial-Pattern/">Common Spatial Pattern(CSP) and Its Improvements/共空间模式及其改进方法</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime title>
-                        2019年03月24日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    Introduction of Common Spatial Pattern1. Why spatial filtering is important?
-Raw EEG scalp potentials are known to ha...
-                
-            </p>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                Declaration:：Financial reposting needs my permission, and others need to have the origin clear.
+            
         </div>
-    </article>
- 
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/05/17/Principal-Component-Analysis/" class="next-post btn btn-default" title="Principal Components Analyses/主成分分析">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Principal Components Analyses/主成分分析</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
 
 
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'zozhDTyjCnB5IMe7M8MrcuYM-gzGzoHsz',
+            appKey: 'NzM0lWThplL955Cxc5i9vokC',
+            placeholder: 'Say something...',
+            notify: true,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
 
 
 
@@ -187,95 +243,14 @@ Raw EEG scalp potentials are known to ha...
 
                 </main>
                 
-                    
-    <aside class="col-md-4 sidebar">
-        
-        
+                    <aside id="article-toc" role="navigation" class="col-md-4">
     <div class="widget">
-        <h3 class="title">Search</h3>
-        <div id="search-form">
-            <div id="result-mask" class="hide"></div>
-            <div class="search-area">
-                
-                    <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
-                    <button type="button" class="search-form-submit" id="search-local">localSearch</button>
-                
-                
-            </div>
-            <div id="result-wrap" class="hide">
-                <div id="search-result"></div>
-            </div>
-            <div class="hide">
-                <template id="search-tpl">
-                    <div class="item">
-                        <a href="/{path}" title="{title}">
-                            <div class="title">{title}</div>
-                            <div class="content">{content}</div>
-                        </a>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
-
+        <h3 class="title">Table of Contents</h3>
         
-        
-    <div class="widget">
-        <h3 class="title">Notification</h3>
-        <div class="notification">
-            <p>
-    Welcome to my personal technological BCI site!<br>
-    If you have any suggestion or find any mistake, please contact me.  --Tengjun Liu, 刘腾俊<br>
-    <br>
-    My email: 2016160033@email.szu.edu.cn  <br>
-    <br>
-    Reposting needs my permission. 转载请联系授权。
-</p>
-        </div>
-    </div>
-
-        
-        
-
-        
-        
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Archives</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019/05</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/"><i class="fa" aria-hidden="true">2019/04</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/"><i class="fa" aria-hidden="true">2019/03</i></a><span class="archive-list-count">6</span></li></ul>
-    </div>
-
-
-        
-        
-  <div class="widget">
-    <h3 class="title">Tag Cloud</h3>
-    <div class="content tag-cloud">
-        
-            <a href="/tags/Analysis-Method-分析方法/" style="font-size: 15px;">Analysis Method/分析方法</a> <a href="/tags/Basic-Knowledge-基本知识/" style="font-size: 10px;">Basic Knowledge/基本知识</a> <a href="/tags/Basic-Skills-基本技能/" style="font-size: 20px;">Basic Skills/基本技能</a> <a href="/tags/Feature-Extraction-特征提取/" style="font-size: 10px;">Feature Extraction/特征提取</a> <a href="/tags/Information-about-BCI-BCI相关信息/" style="font-size: 10px;">Information about BCI/ BCI相关信息</a>
+            <p>暂无目录</p>
         
     </div>
-  </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Friends</h3>
-        <div class="content friends-link">
-        
-            <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">Hexo</a>
-        
-            <a href="https://daviczw.github.io/" class="fa" target="_blank">Davi&#39;s Blog</a>
-        
-        </div>
-    </div>
-
-
-        
-    </aside>
+</aside>
 
                 
             </div>
@@ -318,8 +293,6 @@ Raw EEG scalp potentials are known to ha...
     </div>
 </div>
 
-
-	<script src="/js/search.js?rev=@@hash"></script>
 
 
 
