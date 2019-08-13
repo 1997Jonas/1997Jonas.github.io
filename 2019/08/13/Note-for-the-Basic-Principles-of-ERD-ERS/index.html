@@ -1,0 +1,595 @@
+<!DOCTYPE HTML>
+<html lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Tengjun&#39;s BCI Site">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="Basic Knowledge/基本知识">
+
+
+    <meta name="description" content="The basic principles of ERD/ERSEvent-related potentials/fields vs. event-related EEG/ MEG changes...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Note for the Basic Principles of ERD&amp;ERS /事件相关去同步化/同步化的基本原则笔记 | Tengjun&#39;s BCI Site</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Tengjun&#39;s BCI Site" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', '&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt; &lt;script async src=&#34;https://www.googletagmanager.com/gtag/js?id=UA-135921603-1&#34;&gt;&lt;/script&gt; &lt;script&gt; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(&#39;js&#39;, new Date());
+gtag(&#39;config&#39;, &#39;UA-135921603-1&#39;); &lt;/script&gt;', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(/./img/banner-img.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Tengjun Liu">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 脑机接口，从未如此有趣！ </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Tengjun&#39;s BCI Site</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Articles/文章</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>Archives/时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Note for the Basic Principles of ERD&amp;ERS /事件相关去同步化/同步化的基本原则笔记">
+            
+	            Note for the Basic Principles of ERD&amp;ERS /事件相关去同步化/同步化的基本原则笔记
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Basic-Knowledge-基本知识/">Basic Knowledge/基本知识</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/08/13</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="The-basic-principles-of-ERD-ERS"><a href="#The-basic-principles-of-ERD-ERS" class="headerlink" title="The basic principles of ERD/ERS"></a>The basic principles of ERD/ERS</h1><h2 id="Event-related-potentials-fields-vs-event-related-EEG-MEG-changes-ERD-ERS"><a href="#Event-related-potentials-fields-vs-event-related-EEG-MEG-changes-ERD-ERS" class="headerlink" title="Event-related potentials/fields vs. event-related EEG/ MEG changes(ERD/ERS)"></a>Event-related potentials/fields vs. event-related EEG/ MEG changes(ERD/ERS)</h2><h3 id="event-related-potentials-ERP"><a href="#event-related-potentials-ERP" class="headerlink" title="event-related potentials (ERP)"></a>event-related potentials (ERP)</h3><ol>
+<li>The basic assumption is that the evoked activity, or signal of interest, has a more or less fixed time-delay to the stimulus, while the ongoing EEG/ MEG activity behaves as additive noise.</li>
+</ol>
+<blockquote>
+<p>  Phase-locked?<br>  evoked potentials (EPS) can be considered to result from a reorganization of<br>  the phases of the ongoing EEG signals.</p>
+</blockquote>
+<ol start="2">
+<li>Averaging techniques are commonly used</li>
+</ol>
+<blockquote>
+<p>  Not enough</p>
+</blockquote>
+<ol start="3">
+<li>ERPs represent the responses of cortical neurons due to changes in afferent activity</li>
+</ol>
+<h3 id="event-related-desynchronization-ERD-and-event-related-synchronization-ERS"><a href="#event-related-desynchronization-ERD-and-event-related-synchronization-ERS" class="headerlink" title="event-related desynchronization (ERD) and event-related synchronization (ERS)"></a>event-related desynchronization (ERD) and event-related synchronization (ERS)</h3><ol>
+<li><p>ERD/ ERS phenomena can be viewed as generated by changes in one or more parameters that control oscillations in neuronal networks</p>
+<ol>
+<li><p>which are the general properties of such oscillations?</p>
+<ol>
+<li><p>the intrinsic membrane properties of the neurons and the dynamics of<br>synaptic processes</p>
+</li>
+<li><p>the strength and extent of the interconnections between the network<br>elements, most often formed by feedback loops. Different kinds of<br>feedback loops can be distinguished: involving thalamocortical or<br>cortico-cortical either at short or at long distances</p>
+</li>
+<li><p>The modulating influences from general or local neuro transmitter<br>systems</p>
+</li>
+</ol>
+</li>
+<li><p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS1.png" alt></p>
+<blockquote>
+<p>  Fig. 1. Schema for the generation of induced (ERD/ERS) and evoked (ERP)<br>  activity whereby the former is highly frequency-specific. TCR thalamic relay<br>  cells: RE reticular thalamic nucleus<br>  What do ‘induced’ and ‘evoked’ mean?</p>
+</blockquote>
+<ol>
+<li>Neuronal networks can display different states of synchrony, with oscillations at different frequencies.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>ERD/ERS reflect changes in the activity of local interactions between main<br>neurons and interneurons that control the frequency components of the<br>ongoing EEG</p>
+<ol>
+<li><p>when referring to ERD/ERS of the EEG/MEG it is necessary to specify the<br>frequency band.</p>
+</li>
+<li><p>the term ERD is only meaningful if the baseline measured some seconds<br>before the event represents a rhythmicity seen as a clear peak in the<br>power spectrum Similarly, the term ERS only has a meaning if the event<br>results in the appearance of a rhythmic component and therewith in a<br>spectral peak that was initially not detectable.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Frequency-specificity-of-brain-oscillations"><a href="#Frequency-specificity-of-brain-oscillations" class="headerlink" title="Frequency-specificity of brain oscillations"></a>Frequency-specificity of brain oscillations</h2><h3 id="In-general-the-frequency-of-brain-oscillations-is-negatively-correlated-with-their-amplitude"><a href="#In-general-the-frequency-of-brain-oscillations-is-negatively-correlated-with-their-amplitude" class="headerlink" title="In general, the frequency of brain oscillations is negatively correlated with their amplitude"></a>In general, the frequency of brain oscillations is negatively correlated with their amplitude</h3><ol>
+<li><p>Because the amplitude of oscillations is proportional to the number of synchronously active neural elements</p>
+<ol>
+<li>slowly oscillating cell assemblies comprise more neurons than fast oscillating cells</li>
+</ol>
+</li>
+</ol>
+<h2 id="Quantification-of-ERD-ERS-in-time-and-space"><a href="#Quantification-of-ERD-ERS-in-time-and-space" class="headerlink" title="Quantification of ERD/ERS in time and space"></a>Quantification of ERD/ERS in time and space</h2><h3 id="Time-course-of-ERD-ERS"><a href="#Time-course-of-ERD-ERS" class="headerlink" title="Time course of ERD/ERS"></a>Time course of ERD/ERS</h3><ol>
+<li><p>the EEG/MEG power within identified frequency band is displayed relative (as percentage) to the power of the same EEG/MEG derivations recorded during the reference or baseline period a few seconds before the event occurs</p>
+<ol>
+<li><p>the interval between two consecutive events should last at least some seconds</p>
+<ol>
+<li><p>In the case of voluntary limb movement studies, an<br>inter-event-interval of at least approximately 10 s is<br>recommended</p>
+</li>
+<li><p>in the case of a fore-period reaction time task, the<br>interval should be even longer</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="2">
+<li><p>The classical method to compute the time course of ERD</p>
+<ol>
+<li><p>bandpass filtering of all event-related trials</p>
+</li>
+<li><p>squaring of the amplitude samples to obtain power samples</p>
+</li>
+<li><p>averaging of power samples across all trials</p>
+</li>
+<li><p>averaging over time samples to smooth the data and reduce the<br>variability</p>
+</li>
+<li><p>obtaining percentage values for ERD/ERS</p>
+<ol>
+<li>the power within the frequency band of interest in the<br>period after the event is given by A whereas that of the<br>preceding base line or reference period is given by R. ERD<br>or ERS is defined as the percentage of power decrease or<br>increase respectively, according to the expression ERD%=<br>(A-R)/R×100.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>The different methods used today for ERD/ERS quantification</p>
+<ol>
+<li><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS2.png" alt></li>
+</ol>
+</li>
+</ol>
+<h3 id="Spatial-mapping-of-ERD-ERS"><a href="#Spatial-mapping-of-ERD-ERS" class="headerlink" title="Spatial mapping of ERD/ERS"></a>Spatial mapping of ERD/ERS</h3><ol>
+<li><p>To convert the reference-dependent raw data in reference-free data.<br>different methods are available</p>
+<ol>
+<li><p>Common average reference</p>
+</li>
+<li><p>Laplacian reference</p>
+<ol>
+<li>Reference-free maps (e.g. surface Laplacian ) generally show<br>a more focal pattern as compared to referential maps and are<br>especially recommended when data corresponding to a movement<br>task are analyzed.</li>
+</ol>
+</li>
+<li><p>Local average reference</p>
+</li>
+</ol>
+</li>
+<li><p>For spatial mapping of ERD/ERS, different methods are available</p>
+<ol>
+<li><p>surface Laplacian</p>
+</li>
+<li><p>cortical imaging</p>
+</li>
+<li><p>distributed source imaging</p>
+</li>
+<li><p>Others</p>
+<ol>
+<li><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS3.png" alt></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id><a href="#" class="headerlink" title></a><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS4.png" alt></h3><h2 id="Determination-of-subject-specific-frequency-bands"><a href="#Determination-of-subject-specific-frequency-bands" class="headerlink" title="Determination of subject-specific frequency bands"></a>Determination of subject-specific frequency bands</h2><h3 id="detection-of-the-most-reactive-frequency-band-based-on-the-comparison-of"><a href="#detection-of-the-most-reactive-frequency-band-based-on-the-comparison-of" class="headerlink" title="detection of the most reactive frequency band based on the comparison of"></a>detection of the most reactive frequency band based on the comparison of</h3><p>  two short-term power spectra</p>
+<ol>
+<li><p>One spectrum is calculated for the reference period (R)chosen some<br>seconds before an event occurs</p>
+</li>
+<li><p>the other is calculated for the activity period (A)</p>
+</li>
+<li><p>The difference curve between the 2 logarithmic power spectra of<br>periods A and R, together with 95% confidence interval. can be used<br>to determine significant frequency components</p>
+</li>
+<li><p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS5.png" alt></p>
+<blockquote>
+<p>  Fig. 5. (a)Superimposed logarithmic 1 s reference period (R) and the<br>  activity period (A) during cue-triggered finger movement as well as the<br>  difference between the two spectra with 95% confidence intervals indicated<br>  by the dotted lines. The frequency range displaying significant power<br>  increase is marked. (b) Band power time course calculated for the frequency<br>  band indicated in (a) triggered according to cue-onset (vertical line) and<br>  significance level (sign test P from 10\^-2 to 10\^-8) for power changes<br>  (step function). A power decrease indicates ERD and a power increase ERS.<br>  The horizontal line marks the band power in the reference period</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="continuous-wavelet-transform-CWT"><a href="#continuous-wavelet-transform-CWT" class="headerlink" title="continuous wavelet transform(CWT)"></a>continuous wavelet transform(CWT)</h3><ol>
+<li><p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS6.png" alt></p>
+<ol>
+<li>The amount of dilation of the wavelet is represented by the scale a<br>and the shifting of the wavelet by parameter b</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS7.png" alt></p>
+</li>
+<li><p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS14.png" alt></p>
+</li>
+<li><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS8.png" alt><blockquote>
+<p>  (c) Scalogram displaying the squared and over all trials averaged wavelet<br>  coefficients for the time interval 2 to 8 s (axis). Scale (left axis)<br>  running from 24 to 64 corresponds to a frequency range (right axis) from 12<br>  to 32 Hz. Color-scale from ’black’ (minimum) to red (maximum).</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="definition-of-frequency-bands-relative-to-the-spectral-peak-frequency"><a href="#definition-of-frequency-bands-relative-to-the-spectral-peak-frequency" class="headerlink" title="definition of frequency bands relative to the spectral peak frequency"></a>definition of frequency bands relative to the spectral peak frequency</h3><ol>
+<li>The use of a mean alpha peak center of gravity (centroid) frequency f(i) as an anchor point to adjust frequency bands individually</li>
+</ol>
+<h2 id="ERD-in-memory-and-movement-tasks"><a href="#ERD-in-memory-and-movement-tasks" class="headerlink" title="ERD in memory and movement tasks"></a>ERD in memory and movement tasks</h2><h3 id="Lower-alpha-desynchronization-in-the-range-of-about-7-10-HZ-is-obtained-in-response-to-almost-any-type-of-task"><a href="#Lower-alpha-desynchronization-in-the-range-of-about-7-10-HZ-is-obtained-in-response-to-almost-any-type-of-task" class="headerlink" title="Lower alpha desynchronization (in the range of about 7-10 HZ) is obtained in response to almost any type of task"></a>Lower alpha desynchronization (in the range of about 7-10 HZ) is obtained in response to almost any type of task</h3><ol>
+<li><p>topographically widespread over wide areas of the scalp</p>
+</li>
+<li><p>probably reflects general task demands and attentional processes</p>
+</li>
+</ol>
+<h3 id="Upper-alpha-mu-desynchronization-in-the-range-of-about-10-12-Hz"><a href="#Upper-alpha-mu-desynchronization-in-the-range-of-about-10-12-Hz" class="headerlink" title="Upper alpha( mu) desynchronization (in the range of about 10-12 Hz)"></a>Upper alpha( mu) desynchronization (in the range of about 10-12 Hz)</h3><ol>
+<li><p>very often topographically restricted</p>
+</li>
+<li><p>develops during the processing of sensory-semantic information above<br>parieto-occipital areas</p>
+</li>
+</ol>
+<h3 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h3><ol>
+<li>The degree of desynchronization is closely linked to semantic memory<br>processes</li>
+</ol>
+<h3 id="Voluntary-movement"><a href="#Voluntary-movement" class="headerlink" title="Voluntary movement"></a>Voluntary movement</h3><ol>
+<li><p>Voluntary movement results in a circumscribed desynchronization in<br>the upper alpha and lower beta bands, localized close to<br>sensorimotor areas</p>
+</li>
+<li><p>This desynchronization starts about 2 s prior to movement-onset over<br>the contralateral Rolandic region and becomes bilaterally<br>symmetrical immediately before execution of movement</p>
+</li>
+<li><p>the topography of beta ERD was often more discrete and<br>somatotopically specific than that of alpha ERD</p>
+</li>
+<li><p>The contralateral dominant pre-movement mu ERD is not only<br>independent of movement duration, but also similar with index<br>finger, thumb and hand movement</p>
+</li>
+<li><p>While a circumscribed hand area mu ERD can be found in nearly every<br>subject, a foot area mu ERD localized close to the primary foot area<br>between both hemi- spheres is less frequent</p>
+<ol>
+<li><p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS9.png" alt></p>
+<ol>
+<li>This can be interpreted as follows: the mu rhythm is<br>generated mainly in the post-rolandic somatosensory area and<br>the central beta rhythm (at least some components of it ) in<br>the pre-rolandic motor area</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>a variety of Rolandic mu rhythms exist.</p>
+<ol>
+<li>mu rhythms not only selectively blocked with arm and leg<br>movements, but also with face movement</li>
+</ol>
+</li>
+</ol>
+<h2 id="Simultaneous-occurrence-of-ERD-and-ERS-in-the-alpha-and-lower-beta-bands"><a href="#Simultaneous-occurrence-of-ERD-and-ERS-in-the-alpha-and-lower-beta-bands" class="headerlink" title="Simultaneous occurrence of ERD and ERS in the alpha and lower beta bands"></a>Simultaneous occurrence of ERD and ERS in the alpha and lower beta bands</h2><h3 id="A-visual-input-results-not-only-in-a-desynchronization-of-occipital-alpha-rhythms-but-also-in-an-enhancement-or-synchronization-of-central"><a href="#A-visual-input-results-not-only-in-a-desynchronization-of-occipital-alpha-rhythms-but-also-in-an-enhancement-or-synchronization-of-central" class="headerlink" title="A visual input results not only in a desynchronization of occipital alpha rhythms but also in an enhancement or synchronization of central"></a>A visual input results not only in a desynchronization of occipital alpha rhythms but also in an enhancement or synchronization of central</h3><pre><code>mu rhythms
+</code></pre><h3 id="The-opposite-an-enhancement-of-occipital-alpha-rhythms-and-desynchronization-of-central-mu-rhythms-is-found-e-g-during-self-paced-voluntary-hand-movement"><a href="#The-opposite-an-enhancement-of-occipital-alpha-rhythms-and-desynchronization-of-central-mu-rhythms-is-found-e-g-during-self-paced-voluntary-hand-movement" class="headerlink" title="The opposite, an enhancement of occipital alpha rhythms and desynchronization of central mu rhythms, is found, e.g. during self-paced, voluntary hand movement"></a>The opposite, an enhancement of occipital alpha rhythms and desynchronization of central mu rhythms, is found, e.g. during self-paced, voluntary hand movement</h3><h3 id="-1"><a href="#-1" class="headerlink" title></a><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS10.png" alt></h3><h2 id="Post-movement-beta-ERS"><a href="#Post-movement-beta-ERS" class="headerlink" title="Post-movement beta ERS"></a>Post-movement beta ERS</h2><h3 id="These-induced-beta-oscillations-are-found-in-the-first-second-after-termination-of-a-voluntary-movement-when-the-Rolandic-mu-rhythm-still-displays-a-desynchronized-pattern-of-low-amplitude"><a href="#These-induced-beta-oscillations-are-found-in-the-first-second-after-termination-of-a-voluntary-movement-when-the-Rolandic-mu-rhythm-still-displays-a-desynchronized-pattern-of-low-amplitude" class="headerlink" title="These induced beta oscillations are found in the first second after termination of a voluntary movement, when the Rolandic mu rhythm still displays a desynchronized pattern of low amplitude"></a>These induced beta oscillations are found in the first second after termination of a voluntary movement, when the Rolandic mu rhythm still displays a desynchronized pattern of low amplitude</h3><ol>
+<li><p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS11.png" alt></p>
+<blockquote>
+<p>  Time evolution of band power changes calculated in the indicated frequency<br>  bands (right side). Brisk movement-offset is marked with a vertical line at<br>  second 7. In addition to the power changes (thick line), the significance<br>  levels of power changes (thin line) are indicated. The scale on the right<br>  indicates significance levels 10” to 10(sign test); the scale on the left<br>  gives percentage power changes</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="features"><a href="#features" class="headerlink" title="features"></a>features</h3><ol>
+<li><p>The post-movement beta ERS is a relatively robust phenomenon and is<br>found in nearly every subject after finger, hand, arm and foot movement</p>
+<ol>
+<li><p>the beta ERS is significantly larger with hand as compared to finger<br>movement</p>
+</li>
+<li><p>For finger movement the largest beta ERS was found in the 16-21 Hz<br>band, and for foot movement in the slightly higher 19-26 Hz band</p>
+</li>
+</ol>
+</li>
+<li><p>the beta ERS has a somatotopic organization</p>
+<ol>
+<li><p>It is dominant over the contralateral primary sensorimotor area and<br>has a m around 1000 ms after movement-offset</p>
+<ol>
+<li><p>the maximum of the beta ERS coincides with a reduced<br>excitability of motor cortex neurons</p>
+<ol>
+<li>For the activation of a larger muscle mass, a relatively<br>larger population of cortical is required</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS12.png" alt></p>
+</li>
+<li><p>the beta ERS may be related to a deactivated state of the motor<br>cortex</p>
+</li>
+</ol>
+</li>
+<li><p>the beta ERS is found not only after a really executed but also after an<br>imagined movement</p>
+</li>
+</ol>
+<h2 id="Interpretation-of-ERD-and-ERS-in-the-alpha-and-lower-beta-band"><a href="#Interpretation-of-ERD-and-ERS-in-the-alpha-and-lower-beta-band" class="headerlink" title="Interpretation of ERD and ERS in the alpha and lower beta band"></a>Interpretation of ERD and ERS in the alpha and lower beta band</h2><h3 id="RED"><a href="#RED" class="headerlink" title="RED"></a>RED</h3><ol>
+<li><p>Increased cellular excitability in thalamocortical systems results<br>in a low amplitude desynchronized EEG</p>
+<ol>
+<li>ERD can be interpreted as an electrophysiological correlate of<br>activated cortical areas involved in processing of sensory or<br>cognitive information or production of motor behavior</li>
+</ol>
+</li>
+<li><p>An increased and/or more widespread ERD could be the result of the<br>involvement of a larger neural network or more cell assemblies in<br>information processing</p>
+<ol>
+<li><p>increased task complexity</p>
+<ol>
+<li><p>Once the movement sequence has been learned and the movement<br>is performed more ‘automatically’, the ERD is reduced</p>
+<ol>
+<li><p>activity in primary sensorimotor areas Increases in<br>association with learning a new motor task and decreases<br>after the task has been learned</p>
+</li>
+<li><p>The involvement of primary motor area in learning motor<br>sequences was also suggested</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>more efficient task performance</p>
+</li>
+<li><p>more effort and attention as needed in patients</p>
+</li>
+<li><p>elderly or lower IQ subjects</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="ERS"><a href="#ERS" class="headerlink" title="ERS"></a>ERS</h3><ol>
+<li><p>amplitude enhancement is based on the cooperative or synchronized<br>behavior of a large number of neurons</p>
+<ol>
+<li><p>Large alpha or mu waves in the EEG/MEG need coherent activity of<br>cell assemblies over at least several square centimeters</p>
+</li>
+<li><p>When patches of neurons display coherent activity in the alpha<br>band, an active processing of information is very unlikely and<br>it may be assumed that the corresponding networks are in a<br>deactivated state</p>
+<ol>
+<li>It is of interest to note that about 85% of cortical neurons<br>are excitatory, with the other 15%o being inhibitory</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>occipital alpha rhythms can be considered as idling rhythms of the<br>visual areas and mu rhythms as ‘idling rhythms’ of sensorimotor<br>areas</p>
+</li>
+<li><p>there are also reports on induced (synchronized )alpha band rhythms<br>before omitted stimuli</p>
+</li>
+<li><p>there are always scalp electrodes showing synchronized and<br>desynchronized alpha (beta) band rhythms at the same moment of time</p>
+</li>
+</ol>
+<h2 id="ERS-in-the-gamma-band-40Hz"><a href="#ERS-in-the-gamma-band-40Hz" class="headerlink" title="ERS in the gamma band (40Hz)"></a>ERS in the gamma band (40Hz)</h2><h3 id="Difference"><a href="#Difference" class="headerlink" title="Difference"></a>Difference</h3><ol>
+<li><img src="https://raw.githubusercontent.com/1997Jonas/1997Jonas.github.io/master/images/ERDERS13.png" alt></li>
+</ol>
+<h2 id="Separate-foci-of-synchronized-gamma-activities-occurring-in-cortical-regions-which-are-widely-separated-often-even-in-different-lobes-can-display-high-correlation-during-the-performance-of-cognitive-or-motor-tasks"><a href="#Separate-foci-of-synchronized-gamma-activities-occurring-in-cortical-regions-which-are-widely-separated-often-even-in-different-lobes-can-display-high-correlation-during-the-performance-of-cognitive-or-motor-tasks" class="headerlink" title="Separate foci of synchronized gamma activities occurring in cortical regions which are widely separated-often even in different lobes-can display high correlation during the performance of cognitive or motor tasks"></a>Separate foci of synchronized gamma activities occurring in cortical regions which are widely separated-often even in different lobes-can display high correlation during the performance of cognitive or motor tasks</h2><ol>
+<li>an increase in gamma band coherence is functionally related to the performed task</li>
+</ol>
+<h2 id="ERD-ERS-in-neurological-disorders"><a href="#ERD-ERS-in-neurological-disorders" class="headerlink" title="ERD/ERS in neurological disorders"></a>ERD/ERS in neurological disorders</h2><h3 id="The-quantification-of-movement-related-desynchronization-can-improve-the-diagnosis-of-functional-deficits-in-patients-with-cerebrovascular-disorders-and-Parkinson’s-disease-PD"><a href="#The-quantification-of-movement-related-desynchronization-can-improve-the-diagnosis-of-functional-deficits-in-patients-with-cerebrovascular-disorders-and-Parkinson’s-disease-PD" class="headerlink" title="The quantification of movement-related desynchronization can improve the diagnosis of functional deficits in patients with cerebrovascular disorders and Parkinson’s disease ( PD)"></a>The quantification of movement-related desynchronization can improve the diagnosis of functional deficits in patients with cerebrovascular disorders and Parkinson’s disease ( PD)</h3><ol>
+<li><p>Based on ERD measurements during voluntary hand movement it was, for<br>example, possible to differentiate between superficial and deep<br>vascular lesions</p>
+</li>
+<li><p>In case of PD. the pre movement ERD is less lateralized over the<br>contralateral sensorimotor area and starts later than in control<br>subjects</p>
+</li>
+<li><p>The beta ERS is of smaller magnitude and it is delayed as compared<br>to controls</p>
+</li>
+</ol>
+<h3 id="ERD-changes-in-epilepsy-with-focal-motor-seizures-were-reported-by-Derambure-et-al"><a href="#ERD-changes-in-epilepsy-with-focal-motor-seizures-were-reported-by-Derambure-et-al" class="headerlink" title="ERD changes in epilepsy with focal motor seizures were reported by Derambure et al"></a>ERD changes in epilepsy with focal motor seizures were reported by Derambure et al</h3><p>Mind Map of PDF version:<br> <a href="https://1997jonas.github.io/static/ERDERS(2019-08-12-22-05-49" target="_blank" rel="noopener">The basic princiles of ERD and ERS.pdf</a>.pdf).</p>
+<blockquote>
+<p><strong>Reference:</strong><br>Pfurtscheller G, Da Silva F H L. Event-related EEG/MEG synchronization and desynchronization: basic principles[J]. Clinical neurophysiology, 1999, 110(11): 1842-1857.</p>
+</blockquote>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                Declaration:：Financial reposting needs my permission, and others need to have the origin clear.
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/05/26/Some-useful-techniques-of-Matlab/" class="next-post btn btn-default" title="Some useful techniques of Matlab (Updating)/一些Matlab有用的技巧（更新中）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Some useful techniques of Matlab (Updating)/一些Matlab有用的技巧（更新中）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'zozhDTyjCnB5IMe7M8MrcuYM-gzGzoHsz',
+            appKey: 'NzM0lWThplL955Cxc5i9vokC',
+            placeholder: 'Say something...',
+            notify: true,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The-basic-principles-of-ERD-ERS"><span class="toc-text">The basic principles of ERD/ERS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-related-potentials-fields-vs-event-related-EEG-MEG-changes-ERD-ERS"><span class="toc-text">Event-related potentials/fields vs. event-related EEG/ MEG changes(ERD/ERS)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#event-related-potentials-ERP"><span class="toc-text">event-related potentials (ERP)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#event-related-desynchronization-ERD-and-event-related-synchronization-ERS"><span class="toc-text">event-related desynchronization (ERD) and event-related synchronization (ERS)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Frequency-specificity-of-brain-oscillations"><span class="toc-text">Frequency-specificity of brain oscillations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#In-general-the-frequency-of-brain-oscillations-is-negatively-correlated-with-their-amplitude"><span class="toc-text">In general, the frequency of brain oscillations is negatively correlated with their amplitude</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quantification-of-ERD-ERS-in-time-and-space"><span class="toc-text">Quantification of ERD/ERS in time and space</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Time-course-of-ERD-ERS"><span class="toc-text">Time course of ERD/ERS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spatial-mapping-of-ERD-ERS"><span class="toc-text">Spatial mapping of ERD/ERS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Determination-of-subject-specific-frequency-bands"><span class="toc-text">Determination of subject-specific frequency bands</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#detection-of-the-most-reactive-frequency-band-based-on-the-comparison-of"><span class="toc-text">detection of the most reactive frequency band based on the comparison of</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#continuous-wavelet-transform-CWT"><span class="toc-text">continuous wavelet transform(CWT)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#definition-of-frequency-bands-relative-to-the-spectral-peak-frequency"><span class="toc-text">definition of frequency bands relative to the spectral peak frequency</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERD-in-memory-and-movement-tasks"><span class="toc-text">ERD in memory and movement tasks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Lower-alpha-desynchronization-in-the-range-of-about-7-10-HZ-is-obtained-in-response-to-almost-any-type-of-task"><span class="toc-text">Lower alpha desynchronization (in the range of about 7-10 HZ) is obtained in response to almost any type of task</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Upper-alpha-mu-desynchronization-in-the-range-of-about-10-12-Hz"><span class="toc-text">Upper alpha( mu) desynchronization (in the range of about 10-12 Hz)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#memory"><span class="toc-text">memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Voluntary-movement"><span class="toc-text">Voluntary movement</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simultaneous-occurrence-of-ERD-and-ERS-in-the-alpha-and-lower-beta-bands"><span class="toc-text">Simultaneous occurrence of ERD and ERS in the alpha and lower beta bands</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-visual-input-results-not-only-in-a-desynchronization-of-occipital-alpha-rhythms-but-also-in-an-enhancement-or-synchronization-of-central"><span class="toc-text">A visual input results not only in a desynchronization of occipital alpha rhythms but also in an enhancement or synchronization of central</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-opposite-an-enhancement-of-occipital-alpha-rhythms-and-desynchronization-of-central-mu-rhythms-is-found-e-g-during-self-paced-voluntary-hand-movement"><span class="toc-text">The opposite, an enhancement of occipital alpha rhythms and desynchronization of central mu rhythms, is found, e.g. during self-paced, voluntary hand movement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Post-movement-beta-ERS"><span class="toc-text">Post-movement beta ERS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#These-induced-beta-oscillations-are-found-in-the-first-second-after-termination-of-a-voluntary-movement-when-the-Rolandic-mu-rhythm-still-displays-a-desynchronized-pattern-of-low-amplitude"><span class="toc-text">These induced beta oscillations are found in the first second after termination of a voluntary movement, when the Rolandic mu rhythm still displays a desynchronized pattern of low amplitude</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#features"><span class="toc-text">features</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interpretation-of-ERD-and-ERS-in-the-alpha-and-lower-beta-band"><span class="toc-text">Interpretation of ERD and ERS in the alpha and lower beta band</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RED"><span class="toc-text">RED</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ERS"><span class="toc-text">ERS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERS-in-the-gamma-band-40Hz"><span class="toc-text">ERS in the gamma band (40Hz)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Difference"><span class="toc-text">Difference</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Separate-foci-of-synchronized-gamma-activities-occurring-in-cortical-regions-which-are-widely-separated-often-even-in-different-lobes-can-display-high-correlation-during-the-performance-of-cognitive-or-motor-tasks"><span class="toc-text">Separate foci of synchronized gamma activities occurring in cortical regions which are widely separated-often even in different lobes-can display high correlation during the performance of cognitive or motor tasks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ERD-ERS-in-neurological-disorders"><span class="toc-text">ERD/ERS in neurological disorders</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-quantification-of-movement-related-desynchronization-can-improve-the-diagnosis-of-functional-deficits-in-patients-with-cerebrovascular-disorders-and-Parkinson’s-disease-PD"><span class="toc-text">The quantification of movement-related desynchronization can improve the diagnosis of functional deficits in patients with cerebrovascular disorders and Parkinson’s disease ( PD)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ERD-changes-in-epilepsy-with-focal-motor-seizures-were-reported-by-Derambure-et-al"><span class="toc-text">ERD changes in epilepsy with focal motor seizures were reported by Derambure et al</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
